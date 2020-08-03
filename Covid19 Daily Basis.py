@@ -1,6 +1,6 @@
 import requests
 import json
-
+import matplotlib.pyplot as plt
 url = "https://api.covid19india.org/data.json"
 
 response = requests.get(url)
@@ -27,6 +27,12 @@ for i in range(0, len(covid_cases_cases)):
                                           filter3.upper(), covid_cases_cases[i][filter3]))
     print("~~+~~++~~+~~++~~+~~++~~+~~++~~")
     print()
+total_confirmed = []
+for case in covid_cases_cases:
+    total_confirmed.append(int(case['totalrecovered']))
+
+plt.plot(total_confirmed)
+plt.show()
 
 
 file = open("COVID19_DATA_DAILY_BASIS.csv", "a")
