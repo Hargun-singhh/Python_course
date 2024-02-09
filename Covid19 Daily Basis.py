@@ -37,4 +37,4 @@ plt.show()
 
 file = open("COVID19_DATA_DAILY_BASIS.csv", "a")
 file.write(str(covid_data['cases_time_series']))
-print("Data Saved according to day wise :)")
+print("Data Saved according to day wise  :: )")
